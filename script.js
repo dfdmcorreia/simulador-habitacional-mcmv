@@ -384,6 +384,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let primeiraParcelaSAC_comTaxas = 0;
         let ultimaParcelaSAC_comTaxas = 0;
 
+
         console.log('Iniciando cálculo SAC...'); // Log antes do cálculo SAC
 
         // Calcula cada parcela no sistema SAC
@@ -466,8 +467,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <p>Primeira Parcela (sem taxas): R$ ${formatCurrency(primeiraParcelaSAC_semTaxas)}</p>
             <p>Última Parcela (sem taxas): R$ ${formatCurrency(ultimaParcelaSAC_semTaxas)}</p>
             <p><strong>Primeira Parcela (COM taxas): R$ ${formatCurrency(primeiraParcelaSAC_comTaxas)}</strong></p>
-             <p><strong>Última Parcela (COM taxas): R$ ${formatCurrency(ultimaParcelaSAC_comTaxas)}</strong></p>
-            <p>Total de Juros Pagos (estimado): R$ ${formatCurrency(totalJurosSAC)}</p>
+             <p><strong>Última Parcela (COM taxas): R$ ${formatCurrency(ultimaParcelaSAC_comTaxas)}</strong></p> <p>Total de Juros Pagos (estimado): R$ ${formatCurrency(totalJurosSAC)}</p>
              <p>Total Pago ao Final (COM taxas, estimado): R$ ${formatCurrency(totalPagoSAC)}</p>
             <p><em>No sistema SAC, o valor da parcela diminui ao longo do tempo.</em></p>
 
@@ -532,9 +532,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         textSummaryForSharing += `\n*Simulação SAC*\n` +
                                  `Primeira Parcela (sem taxas): R$ ${formatCurrency(primeiraParcelaSAC_semTaxas)}\n` +
-                                 `Última Parcela (sem taxas): R$ ${ultimaParcelaSAC_semTaxas}\n` +
+                                 `Última Parcela (sem taxas): R$ ${formatCurrency(ultimaParcelaSAC_semTaxas)}\n` + // CORRIGIDO AQUI
                                  `*Primeira Parcela (COM taxas): R$ ${formatCurrency(primeiraParcelaSAC_comTaxas)}*\n` +
-                                 `*Última Parcela (COM taxas): R$ ${formatCurrency(ultimaParcelaSAC_comTaxas)}*\n` +
+                                 `*Última Parcela (COM taxas): R$ ${formatCurrency(ultimaParcelaSAC_comTaxas)}*\n` + // CORRIGIDO AQUI
                                  `Total de Juros Pagos (estimado): R$ ${formatCurrency(totalJurosSAC)}\n` +
                                  `Total Pago ao Final (COM taxas, estimado): R$ ${formatCurrency(totalPagoSAC)}\n` +
                                  `_No sistema SAC, o valor da parcela diminui ao longo do tempo._\n\n`; // _texto_ para itálico no WhatsApp
